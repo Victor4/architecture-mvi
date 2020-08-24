@@ -5,15 +5,19 @@ apply plugin: 'kotlin-android-extensions'
 
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion buildConfig.compileSdk
+
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.architecture_mvi"
-        minSdkVersion 24
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+
+        versionCode appVersion.versionCode
+        versionName appVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,7 +35,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 }
 
@@ -39,32 +43,34 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     api project(':feature:signin')
+    api project(':feature:home')
 
-    def dependencies = rootProject.ext.dependencies
+    implementation deps.kotlin.kotlin
+    implementation deps.android.ktx
+    implementation deps.android.support.appCompat
+    implementation deps.android.support.constraintLayout
+    implementation deps.android.googleCore
+    implementation deps.android.test.espresso
+    implementation deps.android.navigation.navigationFragment
+    implementation deps.android.navigation.navigationUi
+    implementation deps.android.navigation.navigationDynamic
+    implementation deps.android.lifecycle.lifecycleExt
+    implementation deps.android.lifecycle.lifecycleViewModel
+    implementation deps.android.lifecycle.lifecycleRuntime
+    implementation deps.android.recycleview
 
-    implementation dependencies.kotlin
-    implementation dependencies.androidxCore
-    implementation dependencies.appCompat
-    implementation dependencies.timber
-    implementation dependencies.constraintLayout
-    implementation dependencies.junit
-    implementation dependencies.junitExt
-    implementation dependencies.espresso
-    //retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
-    implementation "com.squareup.retrofit2:converter-moshi:2.6.2"
-    implementation 'com.google.android.play:core:1.6.1'
-    // Added Dependencies
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
-    implementation 'android.arch.lifecycle:extensions:1.1.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation deps.junit.core
+    implementation deps.junit.junitExt
+    implementation deps.timber
 
+    implementation deps.retrofit.core
+    implementation deps.retrofit.retrofitMoshi
 
-    //Coroutine
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6"
+    implementation deps.glide
+
+    implementation deps.coroutines.core
+    implementation deps.coroutines.coroutineCore
+
 
 
 }

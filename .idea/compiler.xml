@@ -2,7 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="architecture-mvi-signindata" target="1.7" />
+      <module name="base" target="1.7" />
       <module name="featuredata" target="1.7" />
+      <module name="featuredata-signindata" target="1.7" />
+      <module name="signindata" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,5 +1,8 @@
+include ':support:commom'
+include ':feature:home'
 include ':feature:signin'
 include ':featuredata'
+include ':featuredata:signindata'
 include ':feature'
 include ':app'
 rootProject.name = "architecture-mvi"

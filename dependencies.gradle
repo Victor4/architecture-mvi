@@ -1,45 +1,122 @@
-ext {
+ext.buildConfig = [
+        'compileSdk': 30,
+        'minSdk': 21,
+        'targetSdk': 30
+]
 
-    kotlinVersion = '1.3.72'
+ext.appVersion = [
+        'versionCode': 1,
+        'versionName': "0.1.0"
+]
 
-    buildTools = '4.0.1'
 
-    androidxCoreVersion = '1.1.0'
-    appCompatVersion = '1.1.0'
 
-    constraintLayoutVersion = '1.1.3'
+ext.versions = [
+
+    kotlinVersion: '1.3.72',
+
+    buildTools: '4.0.1',
+
+    androidxCoreVersion: '1.1.0',
+    appCompatVersion: '1.1.0',
+
+    constraintLayoutVersion: '1.1.3',
     //Rx
-    rxJavaVersion = '2.2.7'
-    rxKotlinVersion = '2.2.0'
-    rxAndroidVersion = '2.1.1'
+    rxJavaVersion: '2.2.7',
+    rxKotlinVersion: '2.2.0',
+    rxAndroidVersion: '2.1.1',
 
     //Koin
-    koinVersion = '1.0.2'
+    koinVersion: '1.0.2',
 
     //Junit
-    junitExtVersion = '1.1.1'
-    junitVersion = '4.12'
+    junitExtVersion: '1.1.1',
+    junitVersion: '4.12',
 
     //expresso
-    espressoVersion = '3.2.0'
+    espressoVersion: '3.2.0',
 
     //timber
-    timberVersion = '4.5.1'
+    timberVersion: '4.5.1',
 
+    //coroutine
+    coroutineVersion: '1.3.6',
+    coroutineCoreVersion: '1.3.6',
 
-    dependencies = [
-            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-            rxJava               : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            rxKotlin             : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-            rxAndroid            : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            koin                 : "org.koin:koin-android:$koinVersion",
-            androidxCore         : "androidx.core:core-ktx:$androidxCoreVersion",
-            appCompat            : "androidx.appcompat:appcompat:$appCompatVersion",
-            timber               : "com.jakewharton.timber:timber:$timberVersion",
-            constraintLayout     : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
-            junit                : "junit:junit:$junitVersion",
-            junitExt             : "androidx.test.ext:junit:$junitExtVersion",
-            espresso             : "androidx.test.espresso:espresso-core:$espressoVersion",
+    //google
+    googleCoreVersion: '1.6.1',
 
-    ]
-}
+    //glide
+    glideVersion: '4.11.0',
+
+    //lifeCycle
+    lifeCycleExtVersion: '1.1.1',
+    lifecycleViewModelVersion: '2.2.0',
+    lifecycleRuntimeVersion: '2.2.0',
+
+    //retrofit
+    retrofitVersion: '2.8.1',
+    retrofitMoshiVersion: '2.6.2',
+    recycleViewVersion: '1.1.0',
+
+    //nav
+    nav_version: "2.3.0",
+
+    safeArgsVersion: "2.3.0"
+]
+
+ext.deps = [
+        'android': [
+                'googleCore'  : "com.google.android.play:core:${versions.googleCoreVersion}",
+                'navigation': [
+                        'navigationFragment'   : "androidx.navigation:navigation-fragment-ktx:${versions.nav_version}",
+                        'navigationUi'         : "androidx.navigation:navigation-ui-ktx:${versions.nav_version}",
+                        'navigationDynamic'    : "androidx.navigation:navigation-dynamic-features-fragment:${versions.nav_version}",
+                        'safeArgs'             : "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.safeArgsVersion}"
+                ],
+                'lifecycle': [
+                        lifecycleExt           : "android.arch.lifecycle:extensions:${versions.lifeCycleExtVersion}",
+                        lifecycleViewModel     : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycleViewModelVersion}",
+                        lifecycleRuntime       : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycleRuntimeVersion}"
+                ],
+                'support': [
+                        'appCompat'            : "androidx.appcompat:appcompat:${versions.appCompatVersion}",
+                        'constraintLayout'     : "androidx.constraintlayout:constraintlayout:${versions.constraintLayoutVersion}"
+                ],
+                'ktx' : "androidx.core:core-ktx:${versions.androidxCoreVersion}",
+                'test': [
+                        'espresso'             : "androidx.test.espresso:espresso-core:${versions.espressoVersion}",
+                        'navigation' : "androidx.navigation:navigation-testing:${versions.nav_version}"
+                ],
+                'recycleview' : "androidx.recyclerview:recyclerview:${versions.recycleViewVersion}",
+                'rx': [
+                        'rxJava'               : "io.reactivex.rxjava2:rxjava:${versions.rxJavaVersion}",
+                        'rxKotlin'             : "io.reactivex.rxjava2:rxkotlin:${versions.rxKotlinVersion}",
+                        'rxAndroid'            : "io.reactivex.rxjava2:rxandroid:${versions.rxAndroidVersion}"
+                ],
+        ],
+        'butterkineffe': [
+                'butterknife'          : 'com.jakewharton:butterknife:10.0.0',
+                'butterknifeCompiler'  : 'com.jakewharton:butterknife-compiler:10.0.0'
+        ],
+        'coroutines': [
+                'core'            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutineVersion}",
+                'coroutineCore'        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutineCoreVersion}"
+        ],
+        'glide' : "com.github.bumptech.glide:glide:${versions.glideVersion}",
+        'junit': [
+                'core'                : "junit:junit:${versions.junitVersion}",
+                'junitExt'             : "androidx.test.ext:junit:${versions.junitExtVersion}"
+        ],
+        'koin': [
+                'koin'                 : "org.koin:koin-android:${versions.koinVersion}"
+        ],
+        'kotlin': [
+                'kotlin'               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlinVersion}"
+        ],
+        'timber' : "com.jakewharton.timber:timber:${versions.timberVersion}",
+        'retrofit': [
+                'core'             : "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}",
+                'retrofitMoshi'        : "com.squareup.retrofit2:converter-moshi:${versions.retrofitMoshiVersion}"
+        ]
+]

@@ -5,10 +5,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion buildConfig.compileSdk
 
-    viewBinding {
-        enabled = true
-    }
-
     defaultConfig {
         minSdkVersion buildConfig.minSdk
         targetSdkVersion buildConfig.targetSdk
@@ -27,28 +23,23 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    api project(':featuredata:signindata')
-    api project(':feature:home')
 
+    api project(':feature:signin')
+    api project(':feature:home')
+    api project(':app')
+
+    implementation deps.kotlin.kotlin
     implementation deps.android.ktx
     implementation deps.android.support.appCompat
     implementation deps.android.support.constraintLayout
     implementation deps.android.test.espresso
-    implementation deps.coroutines.core
-    implementation deps.coroutines.coroutineCore
-    implementation deps.junit.core
-    implementation deps.junit.junitExt
-    implementation deps.android.lifecycle.lifecycleExt
-    implementation deps.android.lifecycle.lifecycleViewModel
-    implementation deps.android.lifecycle.lifecycleRuntime
+
     implementation deps.android.navigation.navigationFragment
     implementation deps.android.navigation.navigationUi
     implementation deps.android.navigation.navigationDynamic
-    implementation deps.kotlin.kotlin
+
+    implementation deps.junit.core
+    implementation deps.junit.junitExt
     implementation deps.timber
-    //retrofit
-    implementation deps.retrofit.core
-    implementation deps.retrofit.retrofitMoshi
-    implementation deps.android.googleCore
 
 }
