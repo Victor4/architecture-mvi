@@ -7,12 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion buildConfig.compileSdk
 
-    viewBinding {
-        enabled = true
-    }
-
     defaultConfig {
-        applicationId "com.example.architecture_mvi"
+        applicationId "com.fourall.architectureMvi"
         minSdkVersion buildConfig.minSdk
         targetSdkVersion buildConfig.targetSdk
 
@@ -37,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
+
+    sourceSets.androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    sourceSets.main.java.srcDirs += 'src/main/kotlin'
+    sourceSets.test.java.srcDirs += 'src/test/kotlin'
 }
 
 dependencies {

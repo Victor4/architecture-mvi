@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.architecture_mvi.ui.main.fragment.MainFragment"
+        android:name="com.fourall.architectureMvi.ui.main.fragment.MainFragment"
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_signinnav_graph"

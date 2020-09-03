@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/alfa_slab_one</item>
+        <item>@font/allerta</item>
+        <item>@font/josefin_slab_bold</item>
+        <item>@font/lemon</item>
+        <item>@font/nova_round</item>
+        <item>@font/roboto_black</item>
+        <item>@font/roboto_medium</item>
+        <item>@font/russo_one</item>
+        <item>@font/suez_one</item>
+    </array>
+</resources>

@@ -20,11 +20,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets.androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    sourceSets.main.java.srcDirs += 'src/main/kotlin'
+    sourceSets.test.java.srcDirs += 'src/test/kotlin'
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
+    implementation deps.android.animation
     implementation deps.kotlin.kotlin
     implementation deps.android.ktx
     implementation deps.android.support.appCompat

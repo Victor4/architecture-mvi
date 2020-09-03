@@ -1,8 +1,8 @@
-package com.example.architecture_mvi.ui.main.view
+package com.fourall.architectureMvi.ui.main.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.architecture_mvi.R
+import com.fourall.architectureMvi.R
 
 class MainActivity : AppCompatActivity() {
 

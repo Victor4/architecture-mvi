@@ -21,6 +21,9 @@ ext.versions = [
     appCompatVersion: '1.1.0',
 
     constraintLayoutVersion: '1.1.3',
+
+    dynamicanimationVersion: '1.0.0',
+
     //Rx
     rxJavaVersion: '2.2.7',
     rxKotlinVersion: '2.2.0',
@@ -67,6 +70,7 @@ ext.versions = [
 
 ext.deps = [
         'android': [
+                'animation' : "androidx.dynamicanimation:dynamicanimation:${versions.dynamicanimationVersion}",
                 'googleCore'  : "com.google.android.play:core:${versions.googleCoreVersion}",
                 'navigation': [
                         'navigationFragment'   : "androidx.navigation:navigation-fragment-ktx:${versions.nav_version}",
